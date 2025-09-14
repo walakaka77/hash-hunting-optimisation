@@ -61,7 +61,7 @@ async function processDirectory(dir) {
       console.warn(`Failed to process ${file}: ${e.message}`);
     }
   }
-
+  // Write the processed GPS data to a file and close the exiftool instance
   fs.writeFileSync('output.txt', output.join('\n'), 'utf8');
   console.log('✅ Output written to output.txt');
   await exiftool.end();
